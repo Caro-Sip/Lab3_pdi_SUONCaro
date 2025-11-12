@@ -4,9 +4,9 @@ public class Book {
     String author;
     float price;
 
-    Book(int id, String title, String author, float price)
+    Book(String title, String author, float price)
     {
-        this.id = id;
+        id = 0;
         this.title = title;
         this.author = author;
         this.price = price;

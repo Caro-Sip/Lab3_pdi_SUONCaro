@@ -8,16 +8,39 @@ public class Library
         List<Book> books = new ArrayList<Book>();
         int number_of_book = 0;
 
-        books.add(new Book(1, "The Hobbit", "J.R.R. Tolkien", 10.99f));
-        books.add(new Book(2, "1984", "George Orwell", 8.50f));
-        books.add(new Book(3, "To Kill a Mockingbird", "Harper Lee", 9.75f));
-        books.add(new Book(4, "Pride and Prejudice", "Jane Austen", 7.20f));
-        books.add(new Book(5, "Clean Code", "Robert C. Martin", 32.00f));
+        try (java.util.Scanner scanner = new java.util.Scanner(System.in))
+        {
+            do
+            {
+                System.out.print("Enter book title (or 'exit' to finish): ");
+                String title = scanner.nextLine();
+                if(title.equalsIgnoreCase("exit"))
+                {
+                    break;
+                }
 
+                System.out.print("Enter book author: ");
+                String author = scanner.nextLine();
+
+                System.out.print("Enter book price: ");
+                float price = scanner.nextFloat();
+
+                books.add(new Book(title, author, price));
+                scanner.nextLine(); // Consume the newline character
+            }while(true);
+        }
+        catch(Exception e)
+        {
+            System.out.println("An error occurred: " + e.getMessage());
+        }
+
+        System.out.println("\n--- Book List ---");
+    
         float price_avg = 0;
 
         for(Book b : books)
         {
+            b.id = number_of_book;
             number_of_book++;
             b.printBook();
             price_avg += b.price;
