@@ -40,13 +40,12 @@ public class Library
 
         for(Book b : books)
         {
-            b.id = number_of_book;
-            number_of_book++;
+            b.id = number_of_book++;
             b.printBook();
             price_avg += b.price;
         }
 
-        price_avg = price_avg / number_of_book;
+        price_avg = price_avg / (number_of_book + 1);
 
         System.out.println("The average price of the books " + String.format("%.2f", price_avg));
     }
