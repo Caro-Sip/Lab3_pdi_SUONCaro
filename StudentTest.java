@@ -20,7 +20,7 @@ public class StudentTest
 
         for(Student s : students)
         {
-            s.print();
+            s.print_table();
         }
 
         System.out.print(student2.id);

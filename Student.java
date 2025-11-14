@@ -24,6 +24,11 @@ public class Student
         System.out.println("----------------------------\n");
     }
 
+    public void print_table()
+    {
+        System.out.printf("| %5d | %-20s | %-10s |\n", id, name, major);
+    }
+
     public void setUpdatename(String name)
     {
         this.name = name;
