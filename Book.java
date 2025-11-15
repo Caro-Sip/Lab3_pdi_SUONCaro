@@ -4,9 +4,10 @@ public class Book {
     String author;
     float price;
 
+    Book(){}
+
     Book(String title, String author, float price)
     {
-        id = 0;
         this.title = title;
         this.author = author;
         this.price = price;
@@ -24,5 +25,15 @@ public class Book {
         System.out.println("Author: " + author);
         System.out.println("Price: " + price + " USD");
         System.out.println("---------------\n");
+    }
+
+    public void printBookTable()
+    {
+        System.out.printf("| %5d | %-30s | %-20s | %10.2f USD |\n", id, title, author, price);
+    }
+
+    public void applyID(int id)
+    {
+        this.id = id;
     }
 }

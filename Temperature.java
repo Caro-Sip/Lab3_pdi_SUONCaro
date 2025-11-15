@@ -26,4 +26,8 @@ public class Temperature {
         System.out.println("---------------\n");
     }
     
+    public void printTemperatureTable()
+    {
+        System.out.printf("| %5d | %10.2f °C | %10.2f °F |\n", counter, celsius, farenheit);
+    }
 }

@@ -12,20 +12,25 @@ public class Library
         {
             do
             {
+                Book temp = new Book();
+
                 System.out.print("Enter book title (or 'exit' to finish): ");
-                String title = scanner.nextLine();
-                if(title.equalsIgnoreCase("exit"))
+                temp.title = scanner.nextLine();
+                if(temp.title.equalsIgnoreCase("exit"))
                 {
                     break;
                 }
 
                 System.out.print("Enter book author: ");
-                String author = scanner.nextLine();
+                temp.author = scanner.nextLine();
 
                 System.out.print("Enter book price: ");
-                float price = scanner.nextFloat();
+                temp.price = scanner.nextFloat();
 
-                books.add(new Book(title, author, price));
+                temp.applyID(++number_of_book);
+
+                books.add(temp);
+
                 scanner.nextLine(); // Consume the newline character
             }while(true);
         }
@@ -40,7 +45,6 @@ public class Library
 
         for(Book b : books)
         {
-            b.id = number_of_book++;
             b.printBook();
             price_avg += b.price;
         }

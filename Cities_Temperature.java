@@ -11,19 +11,16 @@ public class Cities_Temperature
 
         try(java.util.Scanner scanner = new java.util.Scanner(System.in))
         {
-            int counter = 0;
             System.out.print("Enter the number of cities: ");
             number_of_cities = scanner.nextInt();
-            do
+            for(int counter = 0; counter < number_of_cities; counter++)
             {
                 System.out.print("Enter city " + (counter+1) + " temperature (in celsius): ");
                 float temperature = scanner.nextFloat();
 
                 temperatures.add(new Temperature(temperature));
                 scanner.nextLine(); // Consume the newline character
-
-                counter++;
-            }while(counter < number_of_cities);
+            }
         }
         catch(Exception e)
         {
