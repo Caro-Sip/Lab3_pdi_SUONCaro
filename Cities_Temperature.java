@@ -19,7 +19,7 @@ public class Cities_Temperature
                 float temperature = scanner.nextFloat();
 
                 temperatures.add(new Temperature(temperature));
-                scanner.nextLine(); // Consume the newline character
+                scanner.nextLine();
             }
         }
         catch(Exception e)
